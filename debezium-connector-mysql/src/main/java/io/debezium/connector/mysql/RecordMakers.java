@@ -181,7 +181,9 @@ public class RecordMakers {
         Envelope envelope = tableSchema.getEnvelopeSchema();
 
         // Generate this table's insert, update, and delete converters ...
-        Integer partitionNum = null;
+        // Integer partitionNum = null;
+        // TODO: where is numPartitions ?
+        Integer partitionNum = kafkaPartition(id, 7);
         Converter converter = new Converter() {
 
             @Override
@@ -488,4 +490,16 @@ public class RecordMakers {
     public TableId getTableIdFromTableNumber(long tableNumber) {
         return tableIdsByTableNumber.get(tableNumber);
     }
+
+    /**
+     * Partition function for Kafka
+     * @param id TableId
+     * @param numPartitions
+     * @return
+     */
+    private Integer kafkaPartition(TableId id, int numPartitions) {
+        String key = String.format("%s.%s", id.schema(), id.table());
+        return Math.abs(key.hashCode() % numPartitions);
+    }
+
 }
