@@ -124,4 +124,4 @@ The Debezium community welcomes anyone that wants to help out in any way, whethe
 
 ## Purpose for this fork
 
-Removed must-be kafka's setting num.partitions=1 and keep CDC order by refined RecordMakers.java.
+Removed must-be kafka's setting num.partitions=1 and keep CDC order by refining RecordMakers.java.
