@@ -121,3 +121,7 @@ Look for references to the types defined in `io.debezium.connector.postgresql.De
 ## Contributing
 
 The Debezium community welcomes anyone that wants to help out in any way, whether that includes reporting problems, helping with documentation, or contributing code changes to fix bugs, add tests, or implement new features. See [this document](CONTRIBUTE.md) for details.
+
+## Purpose for this fork
+
+remove must-be kafka's setting num.partitions=1 and keep CDC order by refined RecordMakers.java.
