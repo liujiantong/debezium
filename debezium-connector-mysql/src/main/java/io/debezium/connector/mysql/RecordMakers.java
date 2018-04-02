@@ -498,8 +498,8 @@ public class RecordMakers {
      * @return
      */
     private Integer kafkaPartition(TableId id, int numPartitions) {
-        String key = String.format("%s.%s", id.schema(), id.table());
-        return Math.abs(key.hashCode() % numPartitions);
+         String key = String.format("%s.%s", id.schema(), id.table());
+         return Math.abs(key.hashCode()) % numPartitions;
     }
 
 }
